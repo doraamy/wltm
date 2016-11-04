@@ -1,0 +1,6 @@
+{{ .Title }}
+
+{{ range .Data.Pages }}
+	{{ .Title }}
+	{{ .Date.Format "2006年01月02日03時04分05秒PM" }}
+{{ end }}

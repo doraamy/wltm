@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+{{ .Date.Format "2006年01月02日03時04分05秒PM"}}
+
+{{ .Content }}
+
+
+{{ partial "footer.html" . }}

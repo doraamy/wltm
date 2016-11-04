@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<h2>OP</h2>
+
+<div class="episodes">
+	{{ range where .Data.Pages.Reverse "Section" "off-pedder" }}
+		<div class="episode">
+			<a href="{{ .Permalink }}">#{{ .File.BaseFileName }} {{ .Title }}</a>
+			<small>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</small>
+			<p>Tags: {{ .Params.tags }}</p>
+			<p>編劇: {{ .Params.writer }}</p>
+			<p>首播日期: {{ .Params.airdate2 }}</p>
+		</div>
+	{{ end }}
+</div>
+
+{{ partial "footer.html" . }}

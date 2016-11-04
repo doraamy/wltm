@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> {{ .Title }} | {{ .Site.Title }} </title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+	<header>
+	MENU
+		<nav>
+			<ul>
+				{{ range .Site.Menus.main }}
+					<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+				{{ end }}
+			</ul>
+		</nav>
+	</header>

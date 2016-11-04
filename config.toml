@@ -1,0 +1,9 @@
+baseurl = "http://www.wltm.hk"
+languageCode = "zh-tw"
+title = "Welcome to WLTM"
+theme = "pantone"
+enableEmoji = true
+googleAnalytics = ""
+paginate = 10
+paginatePath = "page"
+hasCJKLanguage = true

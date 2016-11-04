@@ -13,5 +13,18 @@
 		</div>
 	{{ end }}
 </div>
+<hr>
+<h2>SD</h2>
+<div class="episodes">
+	{{ range where .Data.Pages.Reverse "Section" "some-day" }}
+		<div class="episode">
+			<a href="{{ .Permalink }}">#{{ .File.BaseFileName }} {{ .Title }}</a>
+			<small>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</small>
+			<p>Tags: {{ .Params.tags }}</p>
+			<p>編劇: {{ .Params.writer }}</p>
+			<p>首播日期: {{ .Params.airdate1 }}</p>
+		</div>
+	{{ end }}
+</div>
 
 {{ partial "footer.html" . }}

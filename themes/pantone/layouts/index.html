@@ -6,10 +6,11 @@
 	{{ range where .Data.Pages.Reverse "Section" "off-pedder" }}
 		<div class="episode">
 			<a href="{{ .Permalink }}">#{{ .File.BaseFileName }} {{ .Title }}</a>
-			<small>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</small>
+			<p>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</p>
 			<p>Tags: {{ .Params.tags }}</p>
 			<p>編劇: {{ .Params.writer }}</p>
-			<p>首播日期: {{ .Params.airdate2 }}</p>
+			<p>導演: {{ .Params.director }}</p>
+			<p>首播日期: {{ .Params.airdate1.Format "2006年01月02日(Mon)" }}</p>
 		</div>
 	{{ end }}
 </div>
@@ -19,10 +20,11 @@
 	{{ range where .Data.Pages.Reverse "Section" "some-day" }}
 		<div class="episode">
 			<a href="{{ .Permalink }}">#{{ .File.BaseFileName }} {{ .Title }}</a>
-			<small>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</small>
+			<p>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</p>
 			<p>Tags: {{ .Params.tags }}</p>
 			<p>編劇: {{ .Params.writer }}</p>
-			<p>首播日期: {{ .Params.airdate1 }}</p>
+			<p>導演: {{ .Params.director }}</p>
+			<p>首播日期: {{ .Params.airdate1.Format "2006年01月02日(Mon)" }}</p>
 		</div>
 	{{ end }}
 </div>

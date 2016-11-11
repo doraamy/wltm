@@ -3,8 +3,8 @@
 
 $susy:(
 	columns: 12,
-	gutters: 1/4,
-	gutter-position: inside,
+	gutters: 1/8,
+	gutter-position: after,
 );
 
 $sm: 500px;
@@ -12,34 +12,40 @@ $md: 900px;
 $lg: 1200px;
 $xl: 2000px;
 
-// @include layout(24 1/4 fluid float inside);
-
-@include susy-breakpoint($sm, 2){
-
-}
-
-@include susy-breakpoint($md, 4){
-	
-}
-
 body{
 	@include container(80%);
 }
 
-
 header{
-	background-color: grey;
+	background-color: #eee;
 }
 
 footer{
-	background-color: black;
+	background-color: #eee;
 }
 
 .episodes{
-	display: flex;
+	@include susy-clearfix;
 }
 
-.episode{
-	height: 100px;
-	padding: 20px;
+.grid{
+	@include susy-breakpoint($sm){
+		@include gallery(6 of 12);
+	}
+	@include susy-breakpoint($md){
+		@include gallery(4 of 12);
+	}
+	@include susy-breakpoint($lg){
+		@include gallery(3 of 12);
+	}
+	@include susy-breakpoint($lg){
+		@include gallery(1.5 of 12);
+	}
+	
+	border: 1px solid red;
+	background-color: #eee;
+	img{
+		width: 100%;
+		margin: 0 auto;
+	}
 }

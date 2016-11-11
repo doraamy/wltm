@@ -1,30 +1,36 @@
 {{ partial "header.html" . }}
-
 <h2>OP</h2>
-
 <div class="episodes">
+
 	{{ range where .Data.Pages.Reverse "Section" "off-pedder" }}
-		<div class="episode">
+		<div class="grid">
+			<a href="{{ .Permalink }}"><img src="{{ .Params.image }}" alt="#{{ .File.BaseFileName }} {{ .Title }}"></a>
 			<a href="{{ .Permalink }}">#{{ .File.BaseFileName }} {{ .Title }}</a>
-			<p>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</p>
+			<ul>
+				<li>首播日期: {{ .Params.airdate1.Format "2006年01月02日(Mon)" }}</li>
+				<li>編劇: {{ .Params.writer }}</li>
+				<li>導演: {{ .Params.director }}</li>
+			</ul>
+			<p>Categories: {{ .Params.categories }}</p>
 			<p>Tags: {{ .Params.tags }}</p>
-			<p>編劇: {{ .Params.writer }}</p>
-			<p>導演: {{ .Params.director }}</p>
-			<p>首播日期: {{ .Params.airdate1.Format "2006年01月02日(Mon)" }}</p>
 		</div>
 	{{ end }}
 </div>
 <hr>
+
 <h2>SD</h2>
 <div class="episodes">
 	{{ range where .Data.Pages.Reverse "Section" "some-day" }}
-		<div class="episode">
+		<div class="grid">
+			<a href="{{ .Permalink }}"><img src="{{ .Params.image }}" alt="#{{ .File.BaseFileName }} {{ .Title }}"></a>
 			<a href="{{ .Permalink }}">#{{ .File.BaseFileName }} {{ .Title }}</a>
-			<p>{{ .Date.Format "2006年01月02日03時04分05秒PM" }}</p>
+			<ul>
+				<li>首播日期: {{ .Params.airdate1.Format "2006年01月02日(Mon)" }}</li>
+				<li>編劇: {{ .Params.writer }}</li>
+				<li>導演: {{ .Params.director }}</li>
+			</ul>
+			<p>Categories: {{ .Params.categories }}</p>
 			<p>Tags: {{ .Params.tags }}</p>
-			<p>編劇: {{ .Params.writer }}</p>
-			<p>導演: {{ .Params.director }}</p>
-			<p>首播日期: {{ .Params.airdate1.Format "2006年01月02日(Mon)" }}</p>
 		</div>
 	{{ end }}
 </div>

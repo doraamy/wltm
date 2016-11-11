@@ -2,15 +2,15 @@
 
 <div class="container">
 	<div class="feature">
-	<h1> #{{ .File.BaseFileName }} {{ .Title }}</h1>
 		<ul class="ep-info">
+			<img src="{{ .Params.image }}" alt="#{{ .File.BaseFileName }} {{ .Title }}">
+			<h1> #{{ .File.BaseFileName }} {{ .Title }}</h1>
 			<li>首播: {{ .Params.airdate1.Format "2006年01月02日(Mon)" }}</li>
-			<li>重播: {{ .Params.airdate2.Format "2006年01月02日(Mon)" }}</li>
-			<li>再重播: {{ .Params.airdate3.Format "2006年01月02日(Mon)" }}</li>
-			<li>編劇: {{ .Params.writer }}</li>
-			<li>導演: {{ .Params.director }}</li>
+			{{ with .Params.airdate2 }}<li>重播: {{ .Format "2006年01月02日(Mon)" }} </li>{{ end }}
+			{{ with .Params.airdate3 }}<li>再重播: {{ .Format "2006年01月02日(Mon)" }}</li>{{ end }}
+			{{ with .Params.writer }} <li>編劇: {{ . }}</li>{{ end }}
+			{{ with .Params.director }}<li>導演: {{ . }}</li>{{ end }}
 		</ul>
-		<img src="{{ .Params.image }}" alt="#{{ .File.BaseFileName }} {{ .Title }}">
 	</div>
 	{{ .Content }}
 </div>
